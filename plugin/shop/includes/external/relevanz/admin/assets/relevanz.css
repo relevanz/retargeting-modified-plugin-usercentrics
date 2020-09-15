@@ -1,0 +1,96 @@
+/* -----------------------------------------------------------
+Copyright (c) 2020 Releva GmbH - https://www.releva.nz
+Released under the MIT License (Expat)
+[https://opensource.org/licenses/MIT]
+--------------------------------------------------------------
+*/
+
+table.module-relevanz td.boxCenter {
+    border: none;
+    background: transparent;
+}
+#rz-content {
+    border: 1px solid #cccccc;
+    border-top: 2px solid #AF417E;
+    background: #F7F7F7;
+    width: 100%;
+    padding: 0.5rem 0.2rem;
+    box-sizing: border-box;
+}
+#rz-content * {
+    box-sizing: border-box;
+}
+
+.ui-tabs {
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.ui-tabs ul {
+    margin: 10px 0 0 0;
+    padding: 0 5px 0 5px;
+}
+.ui-tabs ul li {
+    display: inline;
+    line-height: 2em;
+}
+.ui-tabs ul li a,
+.ui-tabs ul li span {
+    position: relative;
+
+    font-size: 10px;
+    white-space: nowrap;
+
+    background-color: #dbdbdb;
+    border-color: #8B877F;
+
+    border-style: solid;
+    border-width: 1px;
+    color: #000;
+    padding: 5px 7px 100px 7px;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+}
+.ui-tabs ul li a img,
+.ui-tabs ul li span img {
+    border: none;
+    margin-bottom: -6px;
+}
+.ui-tabs ul li.inactive a {
+    background: #ccc;
+    color: #777;
+}
+
+.ui-tabs ul li.selected a,
+.ui-tabs ul li:not(.inactive) a:hover {
+    background-color: #AF417E;
+    border-color: #FF3A6F;
+
+    border-bottom-width: 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+.ui-tabs ul li.selected a,
+.ui-tabs ul li.selected span {
+    top: -3px;
+    box-shadow: 2px -1px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}

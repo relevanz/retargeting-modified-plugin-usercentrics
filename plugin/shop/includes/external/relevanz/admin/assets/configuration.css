@@ -1,0 +1,80 @@
+/* -----------------------------------------------------------
+Copyright (c) 2020 Releva GmbH - https://www.releva.nz
+Released under the MIT License (Expat)
+[https://opensource.org/licenses/MIT]
+--------------------------------------------------------------
+*/
+
+#relevanz-configuration-form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#relevanz-configuration-form table td {
+    boorder: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 6px 6px;
+    border-bottom: 1px solid #aaaaaa;
+    border-top: 1px solid #aaaaaa;
+}
+
+#relevanz-configuration-form table td.label {
+    font-weight: bold;
+    width: 15rem;
+}
+
+#relevanz-configuration-form table td.info {
+    width: 1.3rem;
+}
+#relevanz-configuration-form table td.info.has-tooltip::after {
+    content: "i";
+    text-align: center;
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    border-radius: 1rem;
+    height: 1.2rem;
+    line-height: 1.25rem;
+    width: 1.2rem;
+    cursor: pointer;
+}
+#relevanz-configuration-form table td.info .tooltip {
+    display: none;
+}
+#relevanz-configuration-form table td.input {
+    background-color: #e8e8e8;
+}
+#relevanz-configuration-form table td.input input[type="text"] {
+    width: 100%;
+}
+#relevanz-configuration-form table td.input input[type="text"][readonly] {
+    background-color: #f2f2f2;
+    color: #666;
+}
+#relevanz-configuration-form div.button-bar {
+    text-align: right;
+    margin: 0.5rem 0.2rem 0.2rem 0.5rem;
+}
+
+.jconfirm .fix-close-icon .jconfirm-box div.content {
+    line-height: 1.3em;
+}
+.jconfirm .fix-close-icon .jconfirm-box .closeIcon {
+    top: 3px;
+    right: -1px;
+}
+.jconfirm .fix-close-icon .jconfirm-box .closeIcon span::after {
+    content: "\2715";
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+.jconfirm .fix-close-icon .jconfirm-box a.register-now {
+    font-size: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.jconfirm .fix-close-icon .jconfirm-box a.register-now:hover {
+    color: #09f;
+}

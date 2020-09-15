@@ -1,0 +1,32 @@
+{
+    "name": "relevanz/retargeting-modified-plugin",
+    "description": "releva.nz - Technology for personalized marketing",
+    "type": "modified-shop-module",
+    "config": {
+        "vendor-dir": "lib"
+    },
+    "require": {
+        "relevanz/retargeting-base-lib": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/relevanz/retargeting-base-lib.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Releva\\Retargeting\\Modified\\": "lib/modified/"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm composer.lock",
+            "rm lib/autoload.php",
+            "rm -r lib/composer",
+            "mv lib/relevanz/retargeting-base-lib/lib/* lib/relevanz/retargeting-base-lib/",
+            "rm -r lib/relevanz/retargeting-base-lib/{lib,composer.json,LICENSE,README.md}",
+            "rm -r lib/relevanz/retargeting-base-lib/.git* ||:"
+        ]
+    }
+}
