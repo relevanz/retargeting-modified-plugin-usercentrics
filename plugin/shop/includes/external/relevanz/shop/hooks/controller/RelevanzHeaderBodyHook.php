@@ -80,6 +80,18 @@ class RelevanzHeaderBodyHook extends RelevanzHookAbstract {
                 $row = xtc_db_fetch_array($q);
                 if (isset($row['value'])) {
                     $orderTotal = (float)$row['value'];
+                    // reduce by tax
+                    $q = xtc_db_query('SELECT `value` FROM `'.TABLE_ORDERS_TOTAL.'` WHERE `orders_id` = '.$modeid.' AND `class`=\'ot_tax\' LIMIT 1');
+                    $row = xtc_db_fetch_array($q);
+                    if (isset($row['value'])) {
+                        $orderTotal -= (float)$row['value'];
+                    }
+                    // reduce by shipping
+                    $q = xtc_db_query('SELECT `value` FROM `'.TABLE_ORDERS_TOTAL.'` WHERE `orders_id` = '.$modeid.' AND `class`=\'ot_shipping\' LIMIT 1');
+                    $row = xtc_db_fetch_array($q);
+                    if (isset($row['value'])) {
+                        $orderTotal -= (float)$row['value'];
+                    }                    
                 }
                 // If ot_total does not exist, assume it is the highest value in the orders_total table for this order.
                 if ($orderTotal === null) {
