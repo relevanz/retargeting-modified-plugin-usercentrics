@@ -21,6 +21,10 @@ class RelevanzHeaderBodyHook extends RelevanzHookAbstract {
 
         $mode = '';
         $modeid = 0;
+        $customerId = 0;
+        if((int)$_SESSION['customer_id'] > 0) {
+            $customerId = (int)$_SESSION['customer_id'];
+        }
 
         // Detect the mode
         $baseScriptFilename = basename($_SERVER['SCRIPT_FILENAME']);
@@ -62,11 +66,11 @@ class RelevanzHeaderBodyHook extends RelevanzHookAbstract {
         $trackerUrlBase = RelevanzApi::RELEVANZ_TRACKER_URL.'?cid='.$this->credentials->getUserId().'&t=d&';
         switch ($mode) {
             case 'category': {
-                $trackerUrl = $trackerUrlBase.'action=c&id='.$modeid;
+                $trackerUrl = $trackerUrlBase.'action=c&id='.$modeid.'&custid='.$customerId;
                 break;
             }
             case 'product': {
-                $trackerUrl = $trackerUrlBase.'action=p&id='.$modeid;
+                $trackerUrl = $trackerUrlBase.'action=p&id='.$modeid.'&custid='.$customerId;
                 break;
             }
             case 'ordercomplete': {
@@ -97,12 +101,12 @@ class RelevanzHeaderBodyHook extends RelevanzHookAbstract {
                 if (($orderTotal !== null) && !empty($productIds)) {
                     $trackerUrl = RelevanzApi::RELEVANZ_CONV_URL.'?cid='.$this->credentials->getUserId()
                         .'&orderId='.$modeid.'&amount='.$orderTotal
-                        .'&products='.implode(',', $productIds);
+                        .'&products='.implode(',', $productIds).'&custid='.$customerId;
                 }
                 break;
             }
             default: {
-                $trackerUrl = $trackerUrlBase.'action=s';
+                $trackerUrl = $trackerUrlBase.'action=s'.'&custid='.$customerId;;
                 break;
             }
         }
