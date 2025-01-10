@@ -128,7 +128,7 @@ class RelevanzHeaderBodyHook extends RelevanzHookAbstract {
 
         $trackerCode = '
             <!-- Start of releva.nz tracking code -->
-            <script type="text/javascript" src="' . htmlspecialchars($trackerUrl) . '" async="true"></script>
+            <script type="text/plain" data-usercentrics="releva.nz" src="' . htmlspecialchars($trackerUrl) . '"></script>
             <!-- End of releva.nz tracking code -->'."\n";
 
         echo $trackerCode;
